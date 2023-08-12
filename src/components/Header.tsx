@@ -9,13 +9,12 @@ function Header() {
 				<span className="italic opacity-50">Por: Omar Mendoza</span>
 			</div>
 			<p className="relative z-10 max-w-xl opacity-70">
-				Como desarrollador web, estoy apasionado por el mundo de la tecnología y
-				he estado enfocado en esta rama del desarrollo desde 2020. Después de
-				tres años, me encontré sin ideas para nuevos proyectos y con ganas de
-				mejorar mi habilidad para escribir, así que decidí crear un blog. A
-				través de él, quiero compartir mis conocimientos y experiencias en el
-				campo del desarrollo, y dejarlos en el infinito mundo de internet para
-				que otros puedan beneficiarse de ellos.
+				Como desarrollador web he estado enfocado en esta rama del desarrollo
+				desde 2020. Después de tres años, me encontré sin ideas para nuevos
+				proyectos y con ganas de mejorar mi habilidad para escribir, así que
+				decidí crear un blog. A través de él, quiero compartir mis conocimientos
+				y experiencias en el campo del desarrollo, y dejarlos en el infinito
+				mundo de internet para que otros puedan beneficiarse de ellos.
 			</p>
 
 			<div className="flex items-center gap-3">
