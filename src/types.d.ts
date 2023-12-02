@@ -5,6 +5,8 @@ export interface Posts {
 	slug: string;
   description: string;
 	tags: string[];
+	media?: string;
+	altMedia?: string;
 }
 
 type Tags = 

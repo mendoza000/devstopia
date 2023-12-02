@@ -5,6 +5,7 @@ import { Posts } from "@/types";
 import Navbar from "@/components/Navbar";
 import styles from "@/styles/Post.module.css";
 import Head from "next/head";
+import Image from "next/image";
 interface Props {
 	frontmatter: Posts;
 	source: any;
@@ -16,7 +17,7 @@ const Post = ({ source, frontmatter }: Props) => {
 	return (
 		<>
 			<Head>
-				<title>Devstopia - {frontmatter.title}</title>
+				<title>{frontmatter.title} - Devstopia</title>
 			</Head>
 			<div className="dark:text-white">
 				<link
@@ -26,6 +27,15 @@ const Post = ({ source, frontmatter }: Props) => {
 				<Navbar />
 				<div className="min-h-screen px-10 py-20 duration-200 bg-gray-200 lg:py-32 dark:bg-dark lg:px-96">
 					<div className="flex flex-col gap-4 mb-10">
+						{frontmatter.media && (
+							<Image
+								src={frontmatter.media}
+								alt={frontmatter.altMedia!}
+								width={1200}
+								height={300}
+								className="relative z-20 shadow-lg rounded-xl"
+							/>
+						)}
 						<span className="opacity-50">{frontmatter.date}</span>
 						<h1 className="text-4xl font-extrabold">{frontmatter.title}</h1>
 						<div className="flex flex-wrap gap-x-4">
