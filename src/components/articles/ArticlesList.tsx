@@ -1,9 +1,9 @@
 import { shallow } from "zustand/shallow";
-import Link from "next/link";
 import { Posts } from "@/types";
 import ArticleItem from "./ArticleItem";
 import CategoriesList from "./CategoriesList";
 import { useConfigStore } from "@/store/config";
+import { useRouter } from "next/router";
 
 interface Props {
 	posts: Posts[];
@@ -12,6 +12,7 @@ interface Props {
 const ArticlesList = ({ posts }: Props) => {
 	const { tagSelected } = useConfigStore((state) => state, shallow);
 	const postListOrderByDate: Posts[] = [];
+	const router = useRouter();
 
 	const orderPosts = () => {
 		for (let mounth = 12; mounth >= 1; mounth--) {
@@ -38,11 +39,19 @@ const ArticlesList = ({ posts }: Props) => {
 				<div className="flex flex-col gap-5">
 					{tagSelected.name === "Ver todos"
 						? postListOrderByDate.map((post) => {
-								return <ArticleItem key={post.slug} post={post} />;
+								return (
+									(router.isLocaleDomain === false || post.dev === false) && (
+										<ArticleItem key={post.slug} post={post} />
+									)
+								);
 						  })
 						: postListOrderByDate.map((post) => {
 								if (post.tags.includes(tagSelected.name)) {
-									return <ArticleItem key={post.slug} post={post} />;
+									return (
+										(router.isLocaleDomain === false || post.dev === false) && (
+											<ArticleItem key={post.slug} post={post} />
+										)
+									);
 								}
 						  })}
 				</div>

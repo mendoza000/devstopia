@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FiChevronsRight } from "react-icons/fi";
+import { FiArrowUpRight, FiChevronsRight } from "react-icons/fi";
 import { Posts } from "@/types";
 
 interface Props {
@@ -9,7 +9,11 @@ interface Props {
 const ArticleItem = ({ post }: Props) => {
 	return (
 		<Link href={`/posts/${post.slug}`}>
-			<div className="max-w-xl px-6 py-3 duration-200 border border-opacity-50 hover:bg-slate-900 rounded-2xl border-slate-700 hover:bg-opacity-5 hover:dark:bg-opacity-20">
+			<div className="relative max-w-xl px-6 py-3 duration-200 border border-opacity-50 hover:bg-slate-900 rounded-2xl border-slate-700 hover:bg-opacity-5 hover:dark:bg-opacity-20 group hover:scale-105">
+				<div className="absolute duration-200 group-hover:right-4 right-7 group-hover:top-4 top-7">
+					<FiArrowUpRight className="text-2xl text-green-600 duration-200 opacity-0 group-hover:opacity-100" />
+				</div>
+
 				<h2 className="text-xl font-semibold">{post.title}</h2>
 				<span className="text-xs opacity-50 ">{post.date}</span>
 				<p className="mt-4 opacity-70">{post.description}</p>

@@ -7,6 +7,7 @@ export interface Posts {
 	tags: string[];
 	media?: string;
 	altMedia?: string;
+	dev: boolean
 }
 
 type Tags = 
