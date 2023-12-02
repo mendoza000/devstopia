@@ -46,7 +46,7 @@ const ArticlesList = ({ posts }: Props) => {
 					{tagSelected.name === "Ver todos"
 						? postListOrderByDate.map((post) => {
 								return (
-									(hostname === "localhost" || post.dev === false) && (
+									((hostname === "localhost" && post.dev) || !post.dev) && (
 										<ArticleItem key={post.slug} post={post} />
 									)
 								);
@@ -54,7 +54,7 @@ const ArticlesList = ({ posts }: Props) => {
 						: postListOrderByDate.map((post) => {
 								if (post.tags.includes(tagSelected.name)) {
 									return (
-										(hostname === "localhost" || post.dev === false) && (
+										((hostname === "localhost" && post.dev) || !post.dev) && (
 											<ArticleItem key={post.slug} post={post} />
 										)
 									);
