@@ -31,9 +31,17 @@ const ArticleItem = ({ post }: Props) => {
 					})}
 				</div>
 
-				<span className="flex items-center gap-2 mt-4 text-green-600">
-					Leer articulo <FiChevronsRight />
-				</span>
+				<div className="flex items-center justify-between">
+					<span className="flex items-center gap-2 mt-4 font-semibold text-green-600">
+						Leer articulo <FiChevronsRight />
+					</span>
+
+					{post.dev && (
+						<span className="flex items-center gap-2 px-5 py-1 mt-4 font-semibold text-green-600 bg-black rounded-lg">
+							Private
+						</span>
+					)}
+				</div>
 			</div>
 		</Link>
 	);
