@@ -4,6 +4,7 @@ import ArticleItem from "./ArticleItem";
 import CategoriesList from "./CategoriesList";
 import { useConfigStore } from "@/store/config";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 interface Props {
 	posts: Posts[];
@@ -11,8 +12,13 @@ interface Props {
 
 const ArticlesList = ({ posts }: Props) => {
 	const { tagSelected } = useConfigStore((state) => state, shallow);
+	const [hostname, setHostname] = useState("localhost");
 	const postListOrderByDate: Posts[] = [];
 	const router = useRouter();
+
+	useEffect(() => {
+		setHostname(window.location.hostname);
+	}, []);
 
 	const orderPosts = () => {
 		for (let mounth = 12; mounth >= 1; mounth--) {
@@ -40,7 +46,7 @@ const ArticlesList = ({ posts }: Props) => {
 					{tagSelected.name === "Ver todos"
 						? postListOrderByDate.map((post) => {
 								return (
-									(router.isLocaleDomain === false || post.dev === false) && (
+									(hostname === "localhost" || post.dev === false) && (
 										<ArticleItem key={post.slug} post={post} />
 									)
 								);
@@ -48,7 +54,7 @@ const ArticlesList = ({ posts }: Props) => {
 						: postListOrderByDate.map((post) => {
 								if (post.tags.includes(tagSelected.name)) {
 									return (
-										(router.isLocaleDomain === false || post.dev === false) && (
+										(hostname === "localhost" || post.dev === false) && (
 											<ArticleItem key={post.slug} post={post} />
 										)
 									);
