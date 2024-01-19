@@ -7,8 +7,10 @@ module.exports = {
 			colors: {
 				dark: "#161616",
 			},
+			fontFamily: {
+				dosis: ["Dosis", "sans-serif"],
+			},
 		},
 	},
-	// plugins: [require("rippleui")],
 	darkMode: "class",
 };

@@ -14,7 +14,9 @@ const ArticleItem = ({ post }: Props) => {
 					<FiArrowUpRight className="text-2xl text-green-600 duration-200 opacity-0 group-hover:opacity-100" />
 				</div>
 
-				<h2 className="text-xl font-semibold">{post.title}</h2>
+				<h2 className="text-xl font-semibold underline underline-offset-2">
+					{post.title}
+				</h2>
 				<span className="text-xs opacity-50 ">{post.date}</span>
 				<p className="mt-4 opacity-70">{post.description}</p>
 

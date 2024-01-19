@@ -19,14 +19,14 @@ const Post = ({ source, frontmatter }: Props) => {
 			<Head>
 				<title>{frontmatter.title} - Devstopia</title>
 			</Head>
-			<div className="dark:text-white">
+			<div className="bg-gray-200 dark:text-white dark:bg-dark">
 				<link
 					rel="stylesheet"
 					href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css"
 				></link>
 				<Navbar />
-				<div className="min-h-screen px-10 py-20 duration-200 bg-gray-200 lg:py-32 dark:bg-dark lg:px-96">
-					<div className="flex flex-col gap-4 mb-10">
+				<div className="min-h-screen px-10 py-20 mx-auto duration-200 lg:py-32 lg:max-w-2xl md:max-w-xl">
+					<div className="flex flex-col gap-4 mb-10 ">
 						{frontmatter.media && (
 							<Image
 								src={frontmatter.media}

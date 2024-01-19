@@ -20,7 +20,7 @@ export default function Home({ posts }: Props) {
 			<Head>
 				<title>Devstopia - Omar Mendoza</title>
 			</Head>
-			<div className="flex flex-col min-h-screen duration-200 bg-gray-200 justify-centertext-black dark:bg-dark dark:text-white">
+			<div className="flex flex-col justify-center min-h-screen text-black duration-200 bg-gray-200 dark:bg-dark dark:text-white ">
 				<Navbar />
 				<Header />
 				<ArticlesList posts={posts} />

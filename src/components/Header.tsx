@@ -8,7 +8,7 @@ function Header() {
 				<h1 className="text-3xl font-extrabold">Devstopia</h1>
 				<span className="italic opacity-50">Por: Omar Mendoza</span>
 			</div>
-			<p className="relative z-10 max-w-xl opacity-70">
+			<p className="relative z-10 max-w-xl text-lg opacity-70">
 				Como desarrollador web he estado enfocado en esta rama del desarrollo
 				desde 2020. Después de tres años, me encontré sin ideas para nuevos
 				proyectos y con ganas de mejorar mi habilidad para escribir, así que
